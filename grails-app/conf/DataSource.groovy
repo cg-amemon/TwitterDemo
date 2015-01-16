@@ -40,24 +40,23 @@ environments {
             url = "jdbc:h2:mem:devDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE"*/
 			
 			//Asma Local DB Details.
-			/*dbCreate = "create-drop" // one of 'create', 'create-drop', 'update', 'validate', ''
+			dbCreate = "create-drop" // one of 'create', 'create-drop', 'update', 'validate', ''
 			url = "jdbc:mysql://localhost:3306/discoverDB?useUnicode=yes&characterEncoding=UTF-8"
 			username = "root"
 			password = "password"
 			driverClassName = "com.mysql.jdbc.Driver"
 			dialect = "org.hibernate.dialect.MySQL5InnoDBDialect"
-			logSQL = true*/
+			logSQL = true
 			
 			//DB details by Dave
-			dbCreate = "create-drop" // one of 'create', 'create-drop', 'update', 'validate', ''
-			url = "poc-images.cpq7mekxs2tg.us-east-1.rds.amazonaws.com"
-			host = "localhost"
+			/*dbCreate = "update" // one of 'create', 'create-drop', 'update', 'validate', ''
+			url = "n/a"
+			username = "n/a"
+			password = "n/a"
 			port = "3306"
-			username = "root"
-			password = "Capgemini123"
 			driverClassName = "com.mysql.jdbc.Driver"
 			dialect = "org.hibernate.dialect.MySQL5InnoDBDialect"
-			logSQL = true
+			logSQL = true*/
         }
     }
 	
@@ -71,16 +70,21 @@ environments {
 	
     production {
         dataSource {
-            //dbCreate = "update"
-			//driverClassName = "com.mysql.jdbc.Driver"
-			
-			dbCreate = "update" // one of 'create', 'create-drop', 'update', 'validate', ''
-			url = "jdbc:mysql://localhost:3306/discoverDB?useUnicode=yes&characterEncoding=UTF-8"
-			username = "root"
-			password = "Capgemini123"
+            dbCreate = "update"
+			url = "jdbc:h2:prodDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE"
 			driverClassName = "com.mysql.jdbc.Driver"
 			dialect = "org.hibernate.dialect.MySQL5InnoDBDialect"
 			logSQL = true
+			//driverClassName = "com.mysql.jdbc.Driver"
+			
+			/*dbCreate = "update" // one of 'create', 'create-drop', 'update', 'validate', ''
+			url = "n/a"
+			username = "n/a"
+			password = "n/a"
+			port = "3306"
+			driverClassName = "com.mysql.jdbc.Driver"
+			dialect = "org.hibernate.dialect.MySQL5InnoDBDialect"
+			logSQL = true*/
 			
             //url = "jdbc:h2:prodDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE"
 			
