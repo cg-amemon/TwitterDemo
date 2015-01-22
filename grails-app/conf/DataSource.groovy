@@ -1,28 +1,10 @@
-/*import org.springframework.cloud.CloudFactory
-
-
-def cloud
-
-try {
-  cloud = new CloudFactory().cloud
-} catch(e) {
-  e.printStackTrace()
-}*/
-
-//import org.springframework.cloud.CloudFactory
-
 dataSource {
 
 	pooled = true
 	jmxExport = true
 	driverClassName = "org.h2.Driver"
-
-/*    pooled = true
-    jmxExport = true
-    driverClassName = "org.h2.Driver"
-    username = "sa"
-    password = ""*/
 }
+
 hibernate {
     cache.use_second_level_cache = true
     cache.use_query_cache = false
@@ -36,8 +18,6 @@ hibernate {
 environments {
     development {
         dataSource {
-            /*dbCreate = "create-drop" // one of 'create', 'create-drop', 'update', 'validate', ''
-            url = "jdbc:h2:mem:devDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE"*/
 			
 			//Asma Local DB Details.
 			dbCreate = "create-drop" // one of 'create', 'create-drop', 'update', 'validate', ''
@@ -48,47 +28,21 @@ environments {
 			dialect = "org.hibernate.dialect.MySQL5InnoDBDialect"
 			logSQL = true
 			
-			//DB details by Dave
-			/*dbCreate = "update" // one of 'create', 'create-drop', 'update', 'validate', ''
-			url = "n/a"
-			username = "n/a"
-			password = "n/a"
-			port = "3306"
-			driverClassName = "com.mysql.jdbc.Driver"
-			dialect = "org.hibernate.dialect.MySQL5InnoDBDialect"
-			logSQL = true*/
         }
     }
 	
-	/*
-    test {
-        dataSource {
-            dbCreate = "update"
-            url = "jdbc:h2:mem:testDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE"
-        }
-    }*/
-	
     production {
         dataSource {
-            dbCreate = "update"
-			url = "jdbc:h2:prodDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE"
+			//POC Image DB Details
+			dbCreate = "update" // one of 'create', 'create-drop', 'update', 'validate', ''
+			url = "jdbc:mysql://poc-images.cpq7mekxs2tg.us-east-1.rds.amazonaws.com:3306/poc_images?useUnicode=yes&characterEncoding=UTF-8"
+			username = "root"
+			password = "Capgemini123"
 			driverClassName = "com.mysql.jdbc.Driver"
 			dialect = "org.hibernate.dialect.MySQL5InnoDBDialect"
 			logSQL = true
-			//driverClassName = "com.mysql.jdbc.Driver"
 			
-			/*dbCreate = "update" // one of 'create', 'create-drop', 'update', 'validate', ''
-			url = "n/a"
-			username = "n/a"
-			password = "n/a"
-			port = "3306"
-			driverClassName = "com.mysql.jdbc.Driver"
-			dialect = "org.hibernate.dialect.MySQL5InnoDBDialect"
-			logSQL = true*/
-			
-            //url = "jdbc:h2:prodDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE"
-			
-           /* properties {
+            properties {
                // See http://grails.org/doc/latest/guide/conf.html#dataSource for documentation
                jmxEnabled = true
                initialSize = 5
@@ -107,7 +61,7 @@ environments {
                testOnReturn = false
                jdbcInterceptors = "ConnectionState"
                defaultTransactionIsolation = java.sql.Connection.TRANSACTION_READ_COMMITTED
-            }*/
+            }
         }
     }
 }

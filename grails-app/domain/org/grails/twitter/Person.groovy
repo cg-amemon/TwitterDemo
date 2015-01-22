@@ -14,6 +14,7 @@ class Person {
 
 	static transients = ['springSecurityService']
 	
+	//Added by Asam for Search user option.
 	static hasMany = [followed:Person]
 	static searchable = [only: 'realName']
 

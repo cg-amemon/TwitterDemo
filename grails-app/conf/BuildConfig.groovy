@@ -38,15 +38,15 @@ grails.project.dependency.resolution = {
 
         grailsPlugins()
         grailsHome()
-        //mavenLocal()
+        //mavenLocal() //Commented by Asma
         grailsCentral()
-        //mavenCentral()
+        //mavenCentral() //Commented by Asma
         // uncomment these (or add new ones) to enable remote dependency resolution from public Maven repositories
         //mavenRepo "http://repository.codehaus.org"
         //mavenRepo "http://download.java.net/maven/2/"
         //mavenRepo "http://repository.jboss.com/maven2/"
 		
-		mavenRepo "http://maven.springframework.org/milestone/"
+		mavenRepo "http://maven.springframework.org/milestone/" ////Added by Asma
 		
     }
 
@@ -62,13 +62,6 @@ grails.project.dependency.resolution = {
 	    // If you intend to deploy the app on Cloud Foundry, add the following
 	    compile 'org.springframework.cloud:spring-cloud-cloudfoundry-connector:1.0.0.RELEASE'
 		
-		//compile 'org.springframework.cloud:spring-cloud-cli:1.0.0.BUILD-SNAPSHOT'
-		//compile ":cloud-foundry:1.2.3"
-	
-		//compile 'org.cloudfoundry:cloudfoundry-client-lib:0.7.5'
-		//compile 'org.cloudfoundry:cloudfoundry-caldecott-lib:0.1.1'
-		//runtime 'org.codehaus.jackson:jackson-mapper-asl:1.6.2'
-		
     }
 
     plugins {
@@ -79,29 +72,21 @@ grails.project.dependency.resolution = {
         compile ":scaffolding:2.1.2"
         compile ':cache:1.1.8'
         compile ":asset-pipeline:1.9.9"
-		compile ":spring-security-core:2.0-RC4" 
-		
+		compile ":spring-security-core:2.0-RC4"  //Added by Asma
+	
         // plugins needed at runtime but not for compilation
 		//runtime ":hibernate4:4.3.6.1" // or ":hibernate:3.6.10.18"
-		runtime ":hibernate:3.6.10.18" // or ":hibernate:3.6.10.18"
+		runtime ":hibernate:3.6.10.18" //Added by Asma
         runtime ":database-migration:1.4.0"
         runtime ":jquery:1.11.1"
 		
 		//runtime ":elasticsearch:0.0.3.8"
-		runtime ":searchable:0.6.9"
+		runtime ":searchable:0.6.9" //Added by Asma
 
-		//compile ":cloud-foundry:1.2.3"
-		//compile ':cloud-support:1.0.11'
-		
-		//compile ':cloud-foundry:1.2.3'
-		//compile ':webxml:1.4.1'
-		
         // Uncomment these to enable additional asset-pipeline capabilities
         //compile ":sass-asset-pipeline:1.9.0"
         //compile ":less-asset-pipeline:1.10.0"
         //compile ":coffee-asset-pipeline:1.8.0"
         //compile ":handlebars-asset-pipeline:1.3.0.3"
-		
-		//compile ":h2:0.2.6"
     }
 }
